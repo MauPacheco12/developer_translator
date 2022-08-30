@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee shop</title>
+
+    <!--font awesone-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="image/logo.png">
+</head>
+<body>
+    
+
+
+    <!--About section start-->
+    <section class="about" id="about">
+        <h1 class="heading"> <span>Error Puntero- </span> Estructura </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="image/c++.png" alt="">
+            </div>
+
+            <div class="content">
+                <h3>Este error aparece cuando: </h3>
+                <p>se utiliza un puntero a una estructura de datos para acceder a alguno de sus campos, pero el compilador no tiene información suficiente sobre esa estructura de datos. El siguiente programa muestra esta situación:</p>
+                <div class="content-2">
+                    <h5>El error ocurría en un código similar al siguiente: </h5>
+                    <p>struct btree * data;
+                        <br> int main (void) 
+                        <br>{
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data->size = 0;  /* Información incompleta */
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+                        <br>}
+                    </p>
+                    
+                </div>
+                <p>La declaración de la variable data como puntero a la estructura btree es correcta. Para declarar un puntero a una estructura no se necesita la definición de la estructura. Pero en la primera línea de la función main ese puntero se utiliza para acceder a uno de los campos de esta estructura. Al no tener esa definición, el error se muestra en pantalla.
+                </p>
+                <p>La causa más probable de este error es que la definición de la estructura está en otro fichero, y debe estar presente antes de que un puntero se utilice para acceder a sus campos. Por este motivo, las definiciones de las estructuras se suelen agrupar en ficheros con extensión *.h que son incluidos en los ficheros de código.</p>
+                
+                <a href="index.html" class="btn">Volver</a>
+            </div>
+        </div>
+
+    </section>
+    <!--About section end-->
+
+
+    <!--JS File-->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

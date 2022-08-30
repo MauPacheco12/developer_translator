@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee shop</title>
+
+    <!--font awesone-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="image/logo.png">
+</head>
+<body>
+    
+
+
+    <!--About section start-->
+    <section class="about" id="about">
+        <h1 class="heading"> <span>Propiedad No </span> Definida  </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="image/js.png" alt="">
+            </div>
+
+            <div class="content">
+                <h3>Este error ocurre en Chrome cuando lee una propiedad o llama a un método de un objeto indefinido. </h3>
+                <p>Esto puede ocurrir por varias razones, pero lo común es por culpa de la inicialización incorrecta del estado al representar los componentes de la interfaz de usuario.</p>
+                <div class="content-2">
+                    <h5>Veamos un ejemplo en React, pero los mismos principios de inicialización incorrecta también aplican para Angular, Vue o cualquier otro framework: </h5>
+                    <p>class Quiz extends Component {
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;componentWillMount() {
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;componentWillMount() {
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.setState({items: res.data});
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+                        <br>}
+                        <br>render(){
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; < ul> 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {this.state.items.map(item =>
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; > li key= {item.id}>{item.name}>/li>
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)}
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< /ul>
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br>}
+
+                    </p>
+                    
+                </div>
+                <p>Hay dos cosas importantes que pasan aquí:
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. El estado de un componente (ejemplo: this.state) comienza como indefinido.
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Cuando recuperas los datos de manera asíncrona, el componente se renderizará al menos una vez antes de que se carguen los datos, independiente de si se han obtenido en el constructor, componentWillMount o componentDidMount. Cuando en Quiz renderiza por primera vez, this.state.items es indefinido (undefined). Esto, a su vez, significa que ItemList obtiene los elementos como indefinidos y se obtiene el error: “Uncaught TypeError: cannot read property ‘map’ of undefined” en la consola.
+                </p>
+                
+                <a href="index.html" class="btn">Volver</a>
+            </div>
+        </div>
+
+    </section>
+    <!--About section end-->
+
+
+    <!--JS File-->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
